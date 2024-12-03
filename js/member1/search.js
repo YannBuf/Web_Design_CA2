@@ -14,8 +14,14 @@ $(document).ready(() => {
         if (!query) return alert("请输入搜索内容！");
         
         try {
-            // 搜索歌曲
-            const searchResponse = await fetch(`${apiBaseUrl}/search?query=${encodeURIComponent(query)}`);
+            // 搜索歌曲，设置 mode 为 'cors'
+            const searchResponse = await fetch(`${apiBaseUrl}/search?query=${encodeURIComponent(query)}`, {
+                method: 'GET',
+                mode: 'cors', // 确保使用 CORS 模式
+                headers: {
+                    'Content-Type': 'application/json' // 可选，具体取决于 API 要求
+                }
+            });
             if (!searchResponse.ok) throw new Error("搜索请求失败");
             const searchResults = await searchResponse.json();
 
@@ -75,8 +81,14 @@ $(document).ready(() => {
     // 播放歌曲
     async function playSong(song) {
         try {
-            // 获取歌曲详情
-            const detailsResponse = await fetch(`${apiBaseUrl}/song_details?url=${encodeURIComponent(song.link)}`);
+            // 获取歌曲详情，设置 mode 为 'cors'
+            const detailsResponse = await fetch(`${apiBaseUrl}/song_details?url=${encodeURIComponent(song.link)}`, {
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
             if (!detailsResponse.ok) throw new Error("无法获取歌曲详情");
             const songDetails = await detailsResponse.json();
 
@@ -86,8 +98,15 @@ $(document).ready(() => {
             songTitle.textContent = song.title;
             artist.textContent = song.artist;
 
-            // 加载歌词
-            const lyricsResponse = await fetch(`${apiBaseUrl}/lyrics?url=${encodeURIComponent(song.link)}`);
+            // 加载歌词，设置 mode 为 'cors'
+            const lyricsResponse = await fetch(`${apiBaseUrl}/lyrics?url=${encodeURIComponent(song.link)}`, {
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
             if (lyricsResponse.ok) {
                 const lyricsData = await lyricsResponse.json();
                 lyricsContainer.textContent = lyricsData.lyrics || "无歌词信息";
