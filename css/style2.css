@@ -1,0 +1,31 @@
+/* music_library */
+.album-container {
+    overflow-x: auto; /* 允许横向滚动 */
+    white-space: nowrap; /* 保持子元素在一行 */
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .albums {
+    display: flex;
+    gap: 10px; /* 专辑间距 */
+  }
+  
+  .album {
+    display: inline-block;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 150px; /* 专辑宽度 */
+    height: 200px; /* 专辑高度 */
+    text-align: center;
+    line-height: 200px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .album:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大效果 */
+  }
