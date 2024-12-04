@@ -11,3 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
       album.style.animationDelay = `${delay}ms`; // 设置动画延迟
     });
   });
+
+  

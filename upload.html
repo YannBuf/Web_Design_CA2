@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload music- from</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
+    <style>
+        .upload-form {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .form-control, .form-control:focus {
+            background-color: var(--primary-color);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .btn-primary:hover {
+            background-color: #5a81d7;
+            border-color: #5a81d7;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Music Player</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="player.html">Player</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="music_libray.html">Music Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="upload.html">Upload Music</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Upload Music Form -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="upload-form">
+                    <h2 class="text-center mb-4">Upload Your Music</h2>
+                    <form action="#" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="album-name" class="form-label">Album Title:</label>
+                            <input type="text" class="form-control" id="album-name" name="album_name" maxlength="30" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="albumCover" class="form-label">Album cover (Max size 800x800):</label>
+                            <input type="file" class="form-control" id="albumCover" name="albumCover" accept="image/*" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="artist-name" class="form-label">Artist's name:</label>
+                            <input type="text" class="form-control" id="artist-name" name="artist_name" maxlength="30" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="song-name" class="form-label">Song Title:</label>
+                            <input type="text" class="form-control" id="song-name" name="song_name" maxlength="30" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="album-description" class="form-label">Album Description:</label>
+                            <textarea class="form-control" id="album-description" name="album_description" rows="5" maxlength="300" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="music-genre" class="form-label">Music Type:</label>
+                            <select class="form-select" id="music-genre" name="music_genre" required>
+                                <option value="">Please select the music type</option>
+                                <option value="pop">Pop</option>
+                                <option value="rock">Rock</option>
+                                <option value="hiphop">Hiphop</option>
+                                <option value="jazz">Jazz</option>
+                                <option value="classical">Classical</option>
+                                <option value="edm">Edm</option>
+                                <option value="blues">Blue</option>
+                                <option value="reggae">Reggae</option>
+                                <option value="country">Country</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="music-file" class="form-label">Upload music files:</label>
+                            <input type="file" class="form-control" id="music-file" name="music_file" accept="audio/*" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/member2/upload_check.js"></script>
+</body>
+</html>
