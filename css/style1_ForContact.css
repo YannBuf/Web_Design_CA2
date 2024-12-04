@@ -1,4 +1,17 @@
 /* For contact.html */
+:root {
+    --primary-color: #1a1b26;
+    --secondary-color: #24283b;
+    --accent-color: #7aa2f7;
+}
+
+body {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+
 .contact-form {
     background-color: var(--secondary-color);
     padding: 2rem;
