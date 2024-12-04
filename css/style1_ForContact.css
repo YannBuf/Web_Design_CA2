@@ -1,0 +1,21 @@
+/* For contact.html */
+.contact-form {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.form-control,
+.form-control:focus {
+    background-color: var(--primary-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.btn-primary:hover {
+    background-color: #5a81d7;
+    border-color: #5a81d7;
+}

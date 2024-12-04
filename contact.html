@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact US - Music Player</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style1.css">
-    <style>
-        .contact-form {
-            background-color: var(--secondary-color);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
-        .form-control, .form-control:focus {
-            background-color: var(--primary-color);
-            border-color: var(--accent-color);
-            color: #fff;
-        }
-        .btn-primary {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-        .btn-primary:hover {
-            background-color: #5a81d7;
-            border-color: #5a81d7;
-        }
-    </style>
-</head>
-<body class="bg-dark text-light">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style1.css" />
+  </head>
+  <body class="bg-dark text-light">
     <div class="container">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Music Player</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="player.html">Player</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="music_libray.html">Music Library</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Contact Form -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-8">
-                <div class="contact-form">
-                    <h2 class="text-center mb-4">Contact Us</h2>
-                    <p class="text-center mb-4">Please feel free to contact us if you have any questions, suggestions, or interest in working together. We look forward to hearing from you!</p>
-                    <form action="#" method="POST">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name：</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email：</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject：</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message：</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Send</button>
-                        </div>
-                    </form>
-                    <div class="mt-4">
-                        <h3 class="text-center">Other Contacts</h3>
-                        <p class="text-center">Tel: +12 123 4567 8900</p>
-                        <p class="text-center">Address: 1234 Main Street, Dublin 4, Ireland</p>
-                    </div>
-                </div>
-            </div>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Music Player</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="player.html">Player</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="music_libray.html">Music Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+
+      <!-- Contact Form -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8">
+          <div class="contact-form">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="text-center mb-4">
+              Please feel free to contact us if you have any questions,
+              suggestions. We look forward to hearing from you!
+            </p>
+            <form action="#" method="POST">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name：</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email：</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject：</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  name="subject"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message：</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Send</button>
+              </div>
+            </form>
+            <div class="mt-4">
+              <h3 class="text-center">Other Contacts</h3>
+              <p class="text-center">Tel: +12 123 4567 8900</p>
+              <p class="text-center">
+                Address: 1234 Main Street, Dublin 4, Ireland
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS and Popper.js (required for dropdowns and tooltips) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</body>
+    <!-- js code for form validation -->
+    <script src="js/member1/contact.js"></script>
+  </body>
 </html>
