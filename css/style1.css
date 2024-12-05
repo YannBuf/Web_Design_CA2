@@ -1,209 +1,262 @@
 :root {
-  --primary-color: #1a1b26;
-  --secondary-color: #24283b;
-  --accent-color: #7aa2f7;
+    --primary-color: #1a1b26;
+    --secondary-color: #24283b;
+    --accent-color: #7aa2f7;
 }
 
 body {
-  background-color: var(--primary-color);
-  min-height: 100vh;
-  padding: 2rem 0;
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 2rem 0;
 }
 
 .player-container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: var(--secondary-color);
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .record-player {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 2rem;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 2rem;
 }
 
 .tonearm {
-  position: absolute;
-  top: -50px;
-  right: 50px;
-  width: 100px;
-  height: 150px;
-  background: linear-gradient(45deg, #333, #666);
-  clip-path: polygon(80% 0, 100% 100%, 90% 100%, 70% 0);
-  transform-origin: top right;
-  transition: transform 0.5s ease;
-  z-index: 2;
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    width: 100px;
+    height: 150px;
+    background: linear-gradient(45deg, #333, #666);
+    clip-path: polygon(80% 0, 100% 100%, 90% 100%, 70% 0);
+    transform-origin: top right;
+    transition: transform 0.5s ease;
+    z-index: 2;
 }
 
 .playing .tonearm {
-  transform: rotate(20deg);
+    transform: rotate(20deg);
 }
 
 .vinyl-record {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #111, #333);
-  position: relative;
-  animation: rotate 20s linear infinite paused;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #111, #333);
+    position: relative;
+    animation: rotate 20s linear infinite paused;
 }
 
 .playing .vinyl-record {
-  animation-play-state: running;
+    animation-play-state: running;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .album-art {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .album-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .song-info {
-  text-align: left;
-  margin: 0 0 2rem;
+    text-align: left;
+    margin: 0 0 2rem;
 }
 
 .lyrics {
-  height: 300px;
-  overflow-y: auto;
-  text-align: left;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
+    height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .controls {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .progress {
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  margin-bottom: 1rem;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .progress-bar {
-  background-color: var(--accent-color);
-  transition: width 0.1s linear;
+    background-color: var(--accent-color);
+    transition: width 0.1s linear;
 }
 
 .time {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-family: monospace;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: monospace;
 }
 
 .buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .buttons .btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .buttons .btn:hover {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 @media (max-width: 767px) {
-  .player-container {
-      padding: 1rem;
-  }
-  
-  .record-player {
-      width: 250px;
-      height: 250px;
-  }
-  
-  .vinyl-record {
-      width: 250px;
-      height: 250px;
-  }
-  
-  .album-art {
-      width: 170px;
-      height: 170px;
-  }
-  
-  .lyrics {
-      height: 200px;
-      font-size: 1rem;
-  }
-}
+    .player-container {
+        padding: 1rem;
+    }
 
+    .record-player {
+        width: 250px;
+        height: 250px;
+    }
+
+    .vinyl-record {
+        width: 250px;
+        height: 250px;
+    }
+
+    .album-art {
+        width: 170px;
+        height: 170px;
+    }
+
+    .lyrics {
+        height: 200px;
+        font-size: 1rem;
+    }
+}
 
 /* highlight the lyrics */
 #lyrics {
-  max-height: 300px;
-  overflow-y: scroll;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 #lyrics div {
-  font-size: 16px;
-  margin: 5px 0;
-  text-align: center;
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: center;
 }
 
 .current-lyric {
-  font-size: 24px;
-  color: #f39c12; 
-  font-weight: bold;
+    font-size: 24px;
+    color: #f39c12;
+    font-weight: bold;
 }
-
-/* contact us
-.contact-form {
-  background-color: var(--secondary-color);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-.form-control, .form-control:focus {
-  background-color: var(--primary-color);
-  border-color: var(--accent-color);
-  color: #fff;
-}
-.btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-.btn-primary:hover {
-  background-color: #5a81d7;
-  border-color: #5a81d7;
-}*/
 
 
 
+/*for player*/
+/* Set a fixed height for the playlist and enable scrolling */
+.playlist {
+    max-height: 300px; /* 可以根据需要调整这个高度 */
+    overflow-y: scroll; /* 启用垂直滚动 */
+    background-color: rgb(36, 40, 59); /* 设置背景颜色 */
+    color: white; /* 可选：将文本颜色设置为白色，以提高对比度 */
+    border-radius: 15px; /* 设置圆角 */
+    border: 2px solid rgb(36, 40, 59); /* 可选：去除默认的边框 */
+}
+
+/* Style each song item */
+.playlist .list-group-item {
+    background-color: rgb(36, 40, 59); /* Match the playlist background */
+    border: 1px solid rgb(56, 60, 80); /* Slightly lighter border for separation */
+    color: white; /* Ensure the song text is white */
+}
+
+/* Hide the scrollbar for playlist */
+.playlist::-webkit-scrollbar {
+    display: none;
+}
+
+.playlist {
+    -ms-overflow-style: none; /* For Internet Explorer */
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* Hide the scrollbar for the player container */
+.player-container {
+    max-height: 500px; /* Set a maximum height if necessary */
+    overflow: hidden;
+}
+
+/* Hide the scrollbar for the lyrics section */
+.lyrics {
+    max-height: 200px; /* Set a max height for the lyrics container */
+    overflow-y: scroll;
+}
+
+.lyrics::-webkit-scrollbar {
+    display: none;
+}
+
+.lyrics {
+    -ms-overflow-style: none; /* For Internet Explorer */
+    scrollbar-width: none; /* For Firefox */
+}
+
+#lyrics {
+    max-height: 400px; /* 最大高度 */
+    overflow-y: auto; /* 歌词区域滚动 */
+    font-size: 16px; /* 初始字体大小 */
+    line-height: 1.5;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+#lyrics p {
+    margin: 10px 0; /* 每行之间的间距 */
+    padding: 0 10px;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+#lyrics p.highlight {
+    font-size: 24px; /* 当前歌词放大 */
+    color: #ff0; /* 高亮颜色 */
+}
+
+#lyrics p.highlight + p {
+    font-size: 16px; /* 其他歌词恢复正常 */
+}
 
