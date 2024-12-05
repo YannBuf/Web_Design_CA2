@@ -1,168 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player - Music Player</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style1.css">
-    <style>
-        /* Set a fixed height for the playlist and enable scrolling */
-        .playlist {
-			max-height: 300px; /* 可以根据需要调整这个高度 */
-			overflow-y: scroll;  /* 启用垂直滚动 */
-			background-color: rgb(36, 40, 59); /* 设置背景颜色 */
-			color: white; /* 可选：将文本颜色设置为白色，以提高对比度 */
-			border-radius: 15px; /* 设置圆角 */
-			border: 2px solid rgb(36, 40, 59); /* 可选：去除默认的边框 */
-		}
-		
-		/* Style each song item */
-        .playlist .list-group-item {
-            background-color: rgb(36, 40, 59); /* Match the playlist background */
-            border: 1px solid rgb(56, 60, 80); /* Slightly lighter border for separation */
-            color: white; /* Ensure the song text is white */
-        }
-				
-        /* Hide the scrollbar for playlist */
-        .playlist::-webkit-scrollbar {
-            display: none;
-        }
 
-        .playlist {
-            -ms-overflow-style: none;  /* For Internet Explorer */
-            scrollbar-width: none;  /* For Firefox */
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Player - Music Player</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style1.css" />
+    </head>
+    <body class="bg-dark text-light">
+        <div class="container">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Music Player</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="player.html"
+                                    >Player</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="music_libray.html"
+                                    >Music Library</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html"
+                                    >Contact Us</a
+                                >
+                            </li>
+                        </ul>
+                        <form class="d-flex" id="searchForm">
+                            <input
+                                class="form-control me-2"
+                                type="search"
+                                placeholder="Search songs..."
+                                required
+                            />
+                            <button class="btn btn-outline-light" type="submit">
+                                Search
+                            </button>
+                        </form>
+                    </div>
 
-        /* Hide the scrollbar for the player container */
-        .player-container {
-            max-height: 500px; /* Set a maximum height if necessary */
-            overflow: hidden;
-        }
-
-        /* Hide the scrollbar for the lyrics section */
-        .lyrics {
-            max-height: 200px; /* Set a max height for the lyrics container */
-            overflow-y: scroll;
-        }
-
-        .lyrics::-webkit-scrollbar {
-            display: none;
-        }
-
-        .lyrics {
-            -ms-overflow-style: none; /* For Internet Explorer */
-            scrollbar-width: none; /* For Firefox */
-        }
-    </style>
-</head>
-<body class="bg-dark text-light">
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Music Player</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="player.html">Player</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="music_libray.html">Music Library</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="upload.html">Upload Music</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" id="searchForm">
-                        <input class="form-control me-2" type="search" placeholder="Search songs..." required>
-                        <button class="btn btn-outline-light" type="submit">Search</button>
-                    </form>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        <!-- player -->
-        <div class="player-container row">
-            <!-- left handside-->
-            <div class="col-lg-6">
-                <!-- left handside album art-->
-                <div class="record-player">
-                    <div class="tonearm"></div>
-                    <div class="vinyl-record" id="vinylRecord">  
-                        <div class="album-art">
-                            <img src="img/player/placeholder.png" alt="Album Art" class="img-fluid" />
+            <!-- player -->
+            <div class="player-container row">
+                <!-- left handside-->
+                <div class="col-lg-6">
+                    <!-- left handside album art-->
+                    <div class="record-player">
+                        <div class="tonearm"></div>
+                        <div class="vinyl-record" id="vinylRecord">
+                            <div class="album-art">
+                                <img
+                                    src="img/player/placeholder.png"
+                                    alt="Album Art"
+                                    class="img-fluid"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- control player start and stop-->
+                    <div class="controls">
+                        <div class="progress">
+                            <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 0%"
+                            ></div>
+                        </div>
+                        <div class="time">
+                            <span id="currentTime">00:00</span>
+                            <span id="duration">00:00</span>
+                        </div>
+                        <div class="buttons">
+                            <button id="prevBtn" class="btn btn-secondary">
+                                <img
+                                    src="img/player/skip-backward-fill.svg"
+                                    width="25"
+                                    height="25"
+                                    alt="Previous song"
+                                />
+                            </button>
+                            <button id="playBtn" class="btn btn-secondary">
+                                <img
+                                    src="img/player/play-fill.svg"
+                                    width="25"
+                                    height="25"
+                                    alt="Play song"
+                                />
+                            </button>
+                            <button id="nextBtn" class="btn btn-secondary">
+                                <img
+                                    src="img/player/skip-forward-fill.svg"
+                                    width="25"
+                                    height="25"
+                                    alt="next song"
+                                />
+                            </button>
+                            <button id="volumeBtn" class="btn btn-secondary">
+                                <img
+                                    src="img/player/volume-up-fill.svg"
+                                    width="25"
+                                    height="25"
+                                    alt="mute"
+                                />
+                            </button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- control player start and stop-->
-                <div class="controls">
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-                    </div>
-                    <div class="time">
-                        <span id="currentTime">00:00</span> 
-                        <span id="duration">00:00</span>
-                    </div>
-                    <div class="buttons">
-                        <button id="prevBtn" class="btn btn-secondary">
-                            <img src="img/player/skip-backward-fill.svg" width="25" height="25" />
-                        </button>
-                        <button id="playBtn" class="btn btn-secondary">
-                            <img src="img/player/play-fill.svg" width="25" height="25" />
-                        </button>
-                        <button id="nextBtn" class="btn btn-secondary">
-                            <img src="img/player/skip-forward-fill.svg" width="25" height="25" />
-                        </button>
-                        <button id="volumeBtn" class="btn btn-secondary">
-                            <img src="img/player/volume-up-fill.svg" width="25" height="25" />
-                        </button>
+
+                <!-- right handside-->
+                <div class="col-md-6 mx-auto">
+                    <div class="song-info">
+                        <h2 class="text-center" id="songTitle">Song Title</h2>
+                        <p class="text-center" id="artist">Author</p>
+                        <div class="lyrics" id="lyrics">
+                            <!-- 动态显示歌词 -->
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- right handside-->
-            <div class="col-md-6 mx-auto">
-                <div class="song-info">
-                    <h2 class="text-center" id="songTitle">歌名</h2>
-                    <p class="text-center" id="artist">作者</p>
-                    <div class="lyrics" id="lyrics">
-                        <!-- 动态显示歌词 -->
-                    </div>
-                </div>
+            <!-- Song player area -->
+            <audio id="audioPlayer" src="#"></audio>
+
+            <!-- Playlist below the player -->
+            <div class="playlist mt-4">
+                <h3 class="text-center">Playlist</h3>
+                <ul class="list-group" id="playlistContainer">
+                    <!-- songs search results dynamically populate here -->
+                </ul>
             </div>
         </div>
-
-        <!-- Playlist below the player --> 
-        <div class="playlist mt-4">
-            <h3 class="text-center">Playlist</h3>
-            <ul class="list-group" id="playlistContainer">
-                <!-- 搜索结果动态填充到这里 -->
-            </ul>
-        </div>
-
-
-        
-    </div>
-
-    <!-- Song played -->
-    <audio id="audioPlayer" src="http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&response=res&type=convert_url&rid=40371942&random=1731142475"></audio>
-
-    <!-- Bootstrap JS and Popper.js (required for dropdowns and tooltips) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/member1/player.js"></script>
-    <script src="js/member1/search.js"></script>
-
-</body>
+        <!-- Bootstrap JS and Popper.js for dropdowns and tooltips -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- js code for player-->
+        <script src="js/member1/player.js"></script>
+    </body>
 </html>
