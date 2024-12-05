@@ -20,7 +20,8 @@ body {
 }
 
 .carousel-inner img {
-  height: 100vh; /* 确保图片高度等于视口高度 */
+  width:100%;
+  height: 100vh; 
   object-fit: cover; /* 保持图片比例裁切 */
 }
 
@@ -37,8 +38,10 @@ body {
   background-color: #0056b3;
 }
 
-/*----------------轮播动效参数-----------------------------------------*/
+/*---------------- carousel parameter 轮播动效参数-----------------------------------------*/
 .carousel-caption {
+  width:400px;
+  height:auto;
   position: absolute;
   bottom: 10%;
   left: 5%;
@@ -46,15 +49,16 @@ body {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
+  font-size:cale(1rem + 0.5vw);
   border-radius: 5px;
   opacity: 0; /* 初始透明度 */
-  transform: translateY(20px); /* 初始位置 */
+  transform: translateX(20px); /* 初始位置 */
   transition: all 1.5s ease; /* 动画效果 */
 }
 
 .carousel-item.active .carousel-caption {
   opacity: 1; /* 激活后显示 */
-  transform: translateY(0); /* 向上移动到正常位置 */
+  transform: translateX(0); /* 向上移动到正常位置 */
 }
 
 /* 功能介绍区 */
@@ -98,6 +102,17 @@ body {
   color: #666;
 }
 
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh; /* 超小屏幕进一步缩减高度 */
+  }
+
+  .carousel-caption {
+    max-width: 90%; /* 适配更窄的屏幕 */
+    font-size: 0.7rem;
+    padding: 8px;
+  }
+}
 /* -------------------------------music_library---------------------------------------- */
 
 .full-page {
@@ -122,49 +137,70 @@ body {
 
 .albums {
   display: flex;
+
   gap: 30px; /* 专辑间距 */
   padding: 20px;
 }
 
-.album {
+.album-box {
   display: inline-block;
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+}
+
+.album {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transform: scale(0.5) translateY(50px);
+  filter: blur(10px);
+  animation: album-appear 1.5s cubic-bezier(0.25, 0.8, 0.5, 1) forwards;
+}
+
+.album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 5px;
-  width: 200px; /* 专辑宽度 */
-  height: 200px; /* 专辑高度 */
+}
+
+.album-name {
+  width: 200px;
   text-align: center;
-  line-height: 200px;
-  font-size: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  opacity: 0; /* 初始透明 */
-  transform: scale(0.5) translateY(100px); /* 初始缩放和位置 */
-  animation: album-appear 1s cubic-bezier(0.25, 0.8, 0.5, 1) forwards;
-  animation-delay: 0s; /* 默认无延迟 */
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
-.album:hover {
-  transform: scale(1.1); /* 鼠标悬停时放大效果 */
-  filter: brightness(1.2); /* 增加亮度 */
-  transition: transform 0.3s, filter 0.3s; /* 添加悬停效果的过渡 */
-}
-
-/* 动画：缩放 + 运动模糊（利用滤镜模拟） */
 @keyframes album-appear {
   0% {
     opacity: 0;
-    transform: scale(0.5) translateY(100px);
-    filter: blur(10px); /* 初始模糊 */
+    transform: scale(0.5) translateY(50px);
+    filter: blur(10px);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(1.05) translateY(-10px);
-    filter: blur(5px); /* 中间稍模糊 */
+    opacity: 0.5;
+    transform: scale(1.1) translateY(-10px);
+    filter: blur(5px);
   }
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
-    filter: blur(0); /* 清晰 */
+    filter: blur(0);
   }
 }
 
+
+
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; /* 小屏幕缩减 HERO 高度 */
+  }
+
+  .carousel-caption {
+    font-size: 0.8rem; /* 字体缩小 */
+    padding: 10px;
+  }
+}
