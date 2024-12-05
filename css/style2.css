@@ -10,7 +10,7 @@ body {
   padding: 2rem 0;
 }
 
-/*------------------index page-------------------------------------------*/
+/*---------------------------------------index page-------------------------------------------*/
 
 /* 横幅 */
 .hero {
@@ -38,7 +38,7 @@ body {
   background-color: #0056b3;
 }
 
-/*---------------- carousel parameter 轮播动效参数-----------------------------------------*/
+/*-------------------------------- carousel parameter 轮播动效参数*/
 .carousel-caption {
   width:400px;
   height:auto;
@@ -61,7 +61,7 @@ body {
   transform: translateX(0); /* 向上移动到正常位置 */
 }
 
-/* 功能介绍区 */
+/*----------------------------------------------- 功能介绍区 */
 .features {
   padding: 50px;
   text-align: center;
@@ -69,18 +69,63 @@ body {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自适应布局 */
   gap: 20px;
 }
 
 .feature-item {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-/* 图集区 */
+.feature-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持图片比例裁剪 */
+  transition: transform 0.3s ease, filter 0.3s ease; /* 添加平滑过渡 */
+}
+
+.feature-item:hover img {
+  transform: scale(1.1); /* 鼠标悬停放大 */
+  filter: brightness(0.5); /* 变暗效果 */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0; /* 初始隐藏 */
+  transition: opacity 0.3s ease; /* 平滑显示 */
+}
+
+.feature-item:hover .overlay {
+  opacity: 1; /* 鼠标悬停时显示文字 */
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.overlay p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+
+/*--------------------------------------------------- 图集区 */
+
 .gallery {
   padding: 50px;
   text-align: center;
@@ -93,14 +138,35 @@ body {
 }
 
 .gallery-item {
-  height: 150px;
-  background-color: #ddd;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.gallery-item p {
+  margin: 0;
   font-size: 14px;
   color: #666;
 }
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover p {
+  color: #dbc4c4;
+}
+
 
 @media (max-width: 480px) {
   .hero {
@@ -145,8 +211,10 @@ body {
 .album-box {
   display: inline-block;
   width: 200px;
-  height: 300px;
+  height: 250px;
   margin: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .album {
@@ -156,6 +224,14 @@ body {
   transform: scale(0.5) translateY(50px);
   filter: blur(10px);
   animation: album-appear 1.5s cubic-bezier(0.25, 0.8, 0.5, 1) forwards;
+
+}
+
+.album-box:hover {
+  transform: scale(1.1) translateY(0);
+  filter: brightness(1.2);
+  background-color: #7c7c7c;
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3); /* 添加阴影效果 */
 }
 
 .album img {
