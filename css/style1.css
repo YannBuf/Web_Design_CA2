@@ -10,6 +10,15 @@ body {
     padding: 2rem 0;
 }
 
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
 .player-container {
     max-width: 1000px;
     margin: 2rem auto;
@@ -168,7 +177,7 @@ body {
     }
 }
 
-/* highlight the lyrics */
+/* Highlight the lyrics */
 #lyrics {
     max-height: 300px;
     overflow-y: scroll;
@@ -186,20 +195,17 @@ body {
     font-weight: bold;
 }
 
-
-
-/*for player*/
-/* Set a fixed height for the playlist and enable scrolling */
+/* For playlist container */
 .playlist {
-    max-height: 300px; /* 可以根据需要调整这个高度 */
-    overflow-y: scroll; /* 启用垂直滚动 */
-    background-color: rgb(36, 40, 59); /* 设置背景颜色 */
-    color: white; /* 可选：将文本颜色设置为白色，以提高对比度 */
-    border-radius: 15px; /* 设置圆角 */
-    border: 2px solid rgb(36, 40, 59); /* 可选：去除默认的边框 */
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    background-color: rgb(36, 40, 59); /* Set background color */
+    color: white; /* Set text color to white for better contrast */
+    border-radius: 15px; /* Round corners */
+    border: 2px solid rgb(36, 40, 59); /* Optional: remove default border */
 }
 
-/* Style each song item */
+/* Style each song item in the playlist */
 .playlist .list-group-item {
     background-color: rgb(36, 40, 59); /* Match the playlist background */
     border: 1px solid rgb(56, 60, 80); /* Slightly lighter border for separation */
@@ -238,25 +244,24 @@ body {
 }
 
 #lyrics {
-    max-height: 400px; /* 最大高度 */
-    overflow-y: auto; /* 歌词区域滚动 */
-    font-size: 16px; /* 初始字体大小 */
+    max-height: 400px; /* Maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    font-size: 16px; /* Initial font size */
     line-height: 1.5;
     transition: font-size 0.3s ease, color 0.3s ease;
 }
 
 #lyrics p {
-    margin: 10px 0; /* 每行之间的间距 */
+    margin: 10px 0; /* Spacing between lines */
     padding: 0 10px;
     transition: font-size 0.3s ease, color 0.3s ease;
 }
 
 #lyrics p.highlight {
-    font-size: 24px; /* 当前歌词放大 */
-    color: #ff0; /* 高亮颜色 */
+    font-size: 24px; /* Larger font for current lyric */
+    color: #ff0; /* Highlight color */
 }
 
 #lyrics p.highlight + p {
-    font-size: 16px; /* 其他歌词恢复正常 */
+    font-size: 16px; /* Reset font size for other lyrics */
 }
-
