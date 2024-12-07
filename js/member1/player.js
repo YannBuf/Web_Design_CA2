@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    const apiBaseUrl = "http://8.210.171.205"; // API base URL
+    const apiBaseUrl = "https://elated-real-narwhal.glitch.me"; // API base URL
 
     //songs Details
     const $audioPlayer = $("#audioPlayer");
