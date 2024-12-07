@@ -49,7 +49,7 @@ body {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
-  font-size:cale(1rem + 0.5vw);
+  font-size:calc(1rem + 0.5rem);
   border-radius: 5px;
   opacity: 0; /* 初始透明度 */
   transform: translateX(20px); /* 初始位置 */
