@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    const apiBaseUrl = "http://8.210.171.205"; // API base URL
+    const apiBaseUrl = "https://8.210.171.205"; // API base URL
 
     //songs Details
     const $audioPlayer = $("#audioPlayer");
