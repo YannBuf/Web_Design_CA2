@@ -24,6 +24,59 @@ $(document).ready(() => {
     let currentSongIndex = 0; // Index of the currently playing song
     let playlist = []; // Playlist array, initially empty
 
+
+
+    // Handle the click event for the image within the carousel-item
+    $(".carousel-item img").on("click", function () {
+        const artistName = $(this).siblings(".carousel-caption").find("h3").text().trim(); // Get the artist name from <h3> inside carousel-caption
+        searchSongs(artistName); 
+    });
+
+    // Handle the click event for the album cover
+    $(".album-box").on("click", function () {
+        const albumName = $(this).find(".album-name").text().trim(); // Get the album name from <div class="album-name">
+        searchSongs(albumName); 
+    });
+    
+    // Search function to trigger when an image is clicked
+    async function searchSongs(artist) {
+        try {
+            // Fetch search results
+            const searchResponse = await fetch(`${apiBaseUrl}/search?query=${encodeURIComponent(artist)}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (!searchResponse.ok) {
+                throw new Error("Search request failed");
+            }
+
+            const searchResults = await searchResponse.json();
+
+            if (!searchResults.length) {
+                return alert("No matching songs found for " + artist);
+            }
+
+            // Check if on player.html page
+            if (!window.location.pathname.endsWith("player.html")) {
+                // Store search results in sessionStorage
+                sessionStorage.setItem("searchResults", JSON.stringify(searchResults));
+                sessionStorage.setItem("searchQuery", artist);
+                // Redirect to player.html
+                window.location.href = "player.html";
+                return;
+            }
+
+            // If on player.html, update the playlist
+            updatePlaylist(searchResults);
+        } catch (error) {
+            alert("Unable to fetch search results, please try again later!");
+            console.error(error);
+        }
+    }
+
     // Handle the search form submit event
     $("#searchForm").submit(async (event) => {
         event.preventDefault();

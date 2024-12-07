@@ -8,7 +8,7 @@ const albumDescriptionInput = document.getElementById('album-description');
 const musicGenreSelect = document.getElementById('music-genre');
 const musicFileInput = document.getElementById('music-file');
 
-// Custom validation function 自定义验证函数
+// Custom validation function
 form.addEventListener('submit', function (event) {
     let isValid = true;
     let errorMessage = '';

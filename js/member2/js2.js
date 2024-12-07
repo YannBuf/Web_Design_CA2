@@ -1,29 +1,27 @@
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // 设置动画延迟
+document.addEventListener("DOMContentLoaded", () => {
+    // Set animation delay
     const albums = document.querySelectorAll(".album");
     albums.forEach(album => {
-        const delay = album.dataset.delay || 0; // 获取 data-delay 属性
-        album.style.animationDelay = `${delay}ms`; // 设置动画延迟
-        album.style.animation = "album-appear 1s ease forwards"; // 应用动画
+        const delay = album.dataset.delay || 0; // Get the data-delay attribute
+        album.style.animationDelay = `${delay}ms`; // Set the animation delay
+        album.style.animation = "album-appear 1s ease forwards"; // Apply the animation
     });
 
-    // 横向滚动监听
+    // Horizontal scroll listener
     document.querySelectorAll('.album-container').forEach(container => {
         container.addEventListener('wheel', (event) => {
-            event.preventDefault(); // 防止页面滚动
-            container.scrollLeft += event.deltaY; // 横向滚动
+            event.preventDefault(); // Prevent page scrolling
+            container.scrollLeft += event.deltaY; // Horizontal scroll
         });
     });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const albums = document.querySelectorAll(".album"); // 获取所有 .album 元素
+  const albums = document.querySelectorAll(".album"); // Get all .album elements
   albums.forEach((album, index) => {
-      const delay = index * 100; // 每个专辑延迟300ms
-      album.style.animationDelay = `${delay}ms`; // 设置延迟
+      const delay = index * 100; // Set each album's delay to 100ms * index
+      album.style.animationDelay = `${delay}ms`; // Apply the delay
   });
 
-  console.log("Dynamic delay applied to albums!"); // 确认代码执行
+  console.log("Dynamic delay applied to albums!"); // Confirm the code execution
 });

@@ -1,30 +1,32 @@
 :root {
-  --primary-color: #1a1b26;
-  --secondary-color: #24283b;
-  --accent-color: #7aa2f7;
+  --primary-color: #1a1b26; /* Primary background color */
+  --secondary-color: #24283b; /* Secondary color */
+  --accent-color: #7aa2f7; /* Accent color */
 }
 
 body {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* Set background color */
   min-height: 100vh;
   padding: 2rem 0;
 }
 
 /*---------------------------------------index page-------------------------------------------*/
 
-/* 横幅 */
+/* Hero section (full viewport height) */
 .hero {
   position: relative;
-  height: 100vh; /* 高度设置为视口高度 */
+  height: 100vh; /* Set height to viewport height */
   overflow: hidden;
 }
 
+/* Carousel images */
 .carousel-inner img {
-  width:100%;
+  width: 100%;
   height: 100vh; 
-  object-fit: cover; /* 保持图片比例裁切 */
+  object-fit: cover; /* Keep image aspect ratio and crop */
 }
 
+/* Index page button */
 .button-index {
   background-color: #007BFF;
   color: white;
@@ -35,13 +37,13 @@ body {
 }
 
 .button-index:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Hover effect */
 }
 
-/*-------------------------------- carousel parameter 轮播动效参数*/
+/*-------------------------------- carousel parameter - carousel animation settings */
 .carousel-caption {
-  width:400px;
-  height:auto;
+  width: 400px;
+  height: auto;
   position: absolute;
   bottom: 10%;
   left: 5%;
@@ -49,19 +51,19 @@ body {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
-  font-size:calc(1rem + 0.5rem);
+  font-size: calc(1rem + 0.5rem);
   border-radius: 5px;
-  opacity: 0; /* 初始透明度 */
-  transform: translateX(20px); /* 初始位置 */
-  transition: all 1.5s ease; /* 动画效果 */
+  opacity: 0; /* Initial opacity */
+  transform: translateX(20px); /* Initial position */
+  transition: all 1.5s ease; /* Animation effect */
 }
 
 .carousel-item.active .carousel-caption {
-  opacity: 1; /* 激活后显示 */
-  transform: translateX(0); /* 向上移动到正常位置 */
+  opacity: 1; /* Show when active */
+  transform: translateX(0); /* Move to normal position */
 }
 
-/*----------------------------------------------- 功能介绍区 */
+/*----------------------------------------------- Features section */
 .features {
   padding: 50px;
   text-align: center;
@@ -69,7 +71,7 @@ body {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自适应布局 */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
   gap: 20px;
 }
 
@@ -83,13 +85,13 @@ body {
 .feature-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 保持图片比例裁剪 */
-  transition: transform 0.3s ease, filter 0.3s ease; /* 添加平滑过渡 */
+  object-fit: cover; /* Maintain image aspect ratio */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
 }
 
 .feature-item:hover img {
-  transform: scale(1.1); /* 鼠标悬停放大 */
-  filter: brightness(0.5); /* 变暗效果 */
+  transform: scale(1.1); /* Zoom in on hover */
+  filter: brightness(0.5); /* Darken effect */
 }
 
 .overlay {
@@ -98,19 +100,19 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  opacity: 0; /* 初始隐藏 */
-  transition: opacity 0.3s ease; /* 平滑显示 */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth display transition */
 }
 
 .feature-item:hover .overlay {
-  opacity: 1; /* 鼠标悬停时显示文字 */
+  opacity: 1; /* Show overlay on hover */
 }
 
 .overlay h3 {
@@ -124,8 +126,7 @@ body {
 }
 
 
-/*--------------------------------------------------- 图集区 */
-
+/*--------------------------------------------------- Gallery section */
 .gallery {
   padding: 50px;
   text-align: center;
@@ -133,7 +134,7 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
   gap: 20px;
 }
 
@@ -159,28 +160,28 @@ body {
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Zoom in on hover */
   transition: transform 0.3s ease;
 }
 
 .gallery-item:hover p {
-  color: #dbc4c4;
+  color: #dbc4c4; /* Change text color on hover */
 }
 
-
+/* Mobile-specific adjustments */
 @media (max-width: 480px) {
   .hero {
-    height: 50vh; /* 超小屏幕进一步缩减高度 */
+    height: 50vh; /* Reduce hero section height for small screens */
   }
 
   .carousel-caption {
-    max-width: 90%; /* 适配更窄的屏幕 */
+    max-width: 90%; /* Fit better on smaller screens */
     font-size: 0.7rem;
     padding: 8px;
   }
 }
-/* -------------------------------music_library---------------------------------------- */
 
+/* ------------------------------- Music Library section ---------------------------------------- */
 .full-page {
   width: auto;
   height: auto;
@@ -189,11 +190,11 @@ body {
 .header {
   width: auto;
   height: 142px;
-} /*用于控制分区和位置排版*/
+} /* Control section layout and positioning */
 
 .album-container {
-  overflow-x: auto; /* 允许横向滚动 */
-  white-space: nowrap; /* 保持子元素在一行 */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Keep child elements on one line */
   width: 800px;
   height: 400px;
   width: 100%;
@@ -203,8 +204,7 @@ body {
 
 .albums {
   display: flex;
-
-  gap: 30px; /* 专辑间距 */
+  gap: 30px; /* Gap between albums */
   padding: 20px;
 }
 
@@ -224,14 +224,13 @@ body {
   transform: scale(0.5) translateY(50px);
   filter: blur(10px);
   animation: album-appear 1.5s cubic-bezier(0.25, 0.8, 0.5, 1) forwards;
-
 }
 
 .album-box:hover {
-  transform: scale(1.1) translateY(0);
-  filter: brightness(1.2);
+  transform: scale(1.1) translateY(0); /* Scale and reset position on hover */
+  filter: brightness(1.2); /* Increase brightness */
   background-color: #7c7c7c;
-  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3); /* 添加阴影效果 */
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3); /* Add shadow on hover */
 }
 
 .album img {
@@ -249,6 +248,7 @@ body {
   margin-top: 10px;
 }
 
+/* Album appearance animation */
 @keyframes album-appear {
   0% {
     opacity: 0;
@@ -267,16 +267,14 @@ body {
   }
 }
 
-
-
-
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .hero {
-    height: 70vh; /* 小屏幕缩减 HERO 高度 */
+    height: 70vh; /* Reduce hero height on small screens */
   }
 
   .carousel-caption {
-    font-size: 0.8rem; /* 字体缩小 */
+    font-size: 0.8rem; /* Smaller font */
     padding: 10px;
   }
 }
